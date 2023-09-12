@@ -133,6 +133,8 @@ namespace TaskManager
                         deserializedTasks = (List<string>)serializer.Deserialize(reader);
                     }
 
+                    tasks.Clear();
+
                     foreach (string s in deserializedTasks)
                     {
                         tasks.Add(s);
@@ -153,8 +155,7 @@ namespace TaskManager
         private void toolHelp_Click(object sender, EventArgs e)
         {
             string description = $"Welcome to the Task Manager!\n \nUse the provided tools to create reminders for yourself and save them to the program or to a separate file!";
-            MessageBox.Show(description);
+            MessageBox.Show(description, "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
     }
 }
